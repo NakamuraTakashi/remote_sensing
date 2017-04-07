@@ -1,0 +1,7 @@
+Component	band1	band2	band3	band4	band5	band6	comment
+sand	0.32	0.37	0.46	0.53	0.57	0.62	"% sand  (Maritorena et al., 1994)"
+coral	0.05	0.06	0.15	0.21	0.14	0.52	"% coral    (Lesser and Mobley, 1994)"
+hardpan	0.24	0.28	0.38	0.41	0.38	0.58	"% hardpan  (Lesser and Mobley, 1994)"
+brown algae	0.02	0.02	0.05	0.07	0.05	0.3	"% Sargassum (brown arage)  (Maritorena et al., 1994)"
+green algae	0.05	0.07	0.24	0.2	0.12	0.42	"% Boodlea (green algae) (Maritorena et al., 1994)"
+seagrass	0.06	0.07	0.1	0.09	0.1	0.56	"% seagrass (Lesser and Mobley, 1994)"

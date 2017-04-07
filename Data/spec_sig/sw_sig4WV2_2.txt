@@ -1,0 +1,3 @@
+name	band1	band2	band3	band4	band5	band6	comment
+Kz	0.13	0.11	0.12	0.31	0.5	1.1	% Attenuation coefficients (m-1) for Moorea offshore water (Maritorena et al., 1994; Smith and Baker 1981)
+Ainf	0.029	0.036	0.025	0.006	0.003	0.001	% Albedo of deep water on Mooreao offshore water (Maritorena et al., 1994; Smith and Baker 1981) 

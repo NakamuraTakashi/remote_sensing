@@ -1,0 +1,5 @@
+sand	0.5	0.598	0.624	0.702	"% sand  (Lesser and Mobley, 2007)"
+coral	0.067	0.148	0.14	0.43	"% coral    (Lesser and Mobley, 2007)"
+turf algae	0.108	0.168	0.168	0.32	"% turf algae  (Lesser and Mobley, 2007)"
+brown algae	0.026	0.067	0.048	0.183	"% macrophyte (Lesser and Mobley, 2007)"
+seagrass	0.062	0.101	0.098	0.415	"% seagrass (Lesser and Mobley, 2007)"
