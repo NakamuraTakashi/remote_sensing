@@ -1,0 +1,18 @@
+# Output Files
+output*
+*.png
+
+# Backup Files
+backup/*
+*.bak
+
+# Test Files
+texture_Takido/*
+Data/r02_matlab_coral_species/*
+*.bak
+
+# MATLAB temp. files
+*.asv
+*.mat
+!.gitkeep
+
