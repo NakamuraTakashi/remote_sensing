@@ -1,5 +1,5 @@
 # Output Files
-output*
+spectral_unmixing/output*
 *.png
 
 # Backup Files
@@ -8,11 +8,11 @@ backup/*
 
 # Test Files
 texture_Takido/*
-Data/r02_matlab_coral_species/*
+spectral_unmixing/Data/r02_matlab_coral_species/*
 *.bak
 
 # MATLAB temp. files
 *.asv
 *.mat
-!.gitkeep
+
 

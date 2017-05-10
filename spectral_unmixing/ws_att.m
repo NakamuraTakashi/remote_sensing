@@ -7,9 +7,9 @@ g0 = 0.07;
 g1 = 0.155;
 g2 = 0.752;
 
-res_filename = 'Data/radiance_response_WV2.csv';   % Radiance response file for satellite sensor
-aw_filename = 'Data\aw_Smith_Baker_1981.txt';
-ap_filename = 'Data\aphy_Lee_et_al_1998.txt';
+res_filename = 'Data/spec_sig/radiance_response_WV2.csv';   % Radiance response file for satellite sensor
+aw_filename = 'Data/spec_sig/aw_Smith_Baker_1981.txt';
+ap_filename = 'Data/spec_sig/aphy_Lee_et_al_1998.txt';
 
 % ************************************************************************
 Res = csvread(res_filename,1,0);
