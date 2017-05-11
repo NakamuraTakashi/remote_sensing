@@ -1,6 +1,5 @@
 # Output Files
 spectral_unmixing/output*
-!spectral_unmixing/output/.gitkeep
 *.png
 
 # Backup Files
