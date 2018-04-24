@@ -3,32 +3,32 @@
 %      ver 2016/02/04   Copyright (c) 2016 Takashi NAKAMURA
 % *************************************************************************
 
-sig_filename = {'Data/01_Acropora_muricata.csv'           % Reflectance files for component
-                'Data/02_Pavona_frondifera.csv' 
-                'Data/03_seagrass.csv' 
-                'Data/04_brown_macroalgae.csv' 
-                'Data/05_algallawn.csv' 
-                'Data/06_Acropora_pulcra.csv' 
-                'Data/07_Montipora_digitata.csv' 
-                'Data/08_brown_macroalgae.csv' 
-                'Data/09_green_macroalgae.csv' 
-                'Data/10_green_macroalgae.csv' 
-                'Data/11_red_algae.csv' 
-                'Data/12_sand.csv' 
-                'Data/13_Ulva_spp.csv' 
-                'Data/14_Padina_spp.csv' 
-                'Data/15_Sargassum_sp1_akarui.csv' 
-                'Data/15_Sargassum_sp2_komakai.csv' 
-                'Data/15_Sargassum_sp3_nokogiri.csv' 
-                'Data/16_Turbinaria_ornata.csv' 
-                'Data/17_black_soil.csv' 
-                'Data/18_red_soil.csv' 
-                'Data/19_hardpan.csv' 
+sig_filename = {'Data/spec_sig/01_Acropora_muricata.csv'           % Reflectance files for component
+                'Data/spec_sig/02_Pavona_frondifera.csv' 
+                'Data/spec_sig/03_seagrass.csv' 
+                'Data/spec_sig/04_brown_macroalgae.csv' 
+                'Data/spec_sig/05_algallawn.csv' 
+                'Data/spec_sig/06_Acropora_pulcra.csv' 
+                'Data/spec_sig/07_Montipora_digitata.csv' 
+                'Data/spec_sig/08_brown_macroalgae.csv' 
+                'Data/spec_sig/09_green_macroalgae.csv' 
+                'Data/spec_sig/10_green_macroalgae.csv' 
+                'Data/spec_sig/11_red_algae.csv' 
+                'Data/spec_sig/12_sand.csv' 
+                'Data/spec_sig/13_Ulva_spp.csv' 
+                'Data/spec_sig/14_Padina_spp.csv' 
+                'Data/spec_sig/15_Sargassum_sp1_akarui.csv' 
+                'Data/spec_sig/15_Sargassum_sp2_komakai.csv' 
+                'Data/spec_sig/15_Sargassum_sp3_nokogiri.csv' 
+                'Data/spec_sig/16_Turbinaria_ornata.csv' 
+                'Data/spec_sig/17_black_soil.csv' 
+                'Data/spec_sig/18_red_soil.csv' 
+                'Data/spec_sig/19_hardpan.csv' 
                 };
             
-res_filename = 'Data/radiance_response_WV2.csv';   % Radiance response file for satellite sensor
+res_filename = 'Data/spec_sig/radiance_response_WV2.csv';   % Radiance response file for satellite sensor
 
-out_filename = 'Data/SpecSig4WV2.csv';
+out_filename = 'Data/spec_sig/SpecSig4WV2_2.csv';
 %% 
 num_files = size(sig_filename,1);
 

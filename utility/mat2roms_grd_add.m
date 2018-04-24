@@ -52,16 +52,16 @@ fig = figure;
 fig.OuterPosition = [0 0 600 950];
 imshow(h2, 'DisplayRange',[-0.5 5], 'colormap', colmap2);  % Depth
 %% 
-
-% his = 'D:\ROMS\Shiraho_reef\OAv11\ocean_his_10_4.nc';
-his = 'C:\cygwin64\home\Takashi\ROMS\Projects\Shiraho_reef2\ocean_his_10.nc';
-ncdisp(his)
-Hs = ncread(his,'Hwave',[1 1 95],[Inf Inf 1]);
-Hs2 =transpose(Hs);
-fig = figure;
-fig.OuterPosition = [0 0 600 950];
-imshow(Hs2, 'DisplayRange',[0 1], 'colormap', colmap4);  % Depth
-
+% 
+% % his = 'D:\ROMS\Shiraho_reef\OAv11\ocean_his_10_4.nc';
+% his = 'C:\cygwin64\home\Takashi\ROMS\Projects\Shiraho_reef2\ocean_his_10.nc';
+% ncdisp(his)
+% Hs = ncread(his,'Hwave',[1 1 95],[Inf Inf 1]);
+% Hs2 =transpose(Hs);
+% fig = figure;
+% fig.OuterPosition = [0 0 600 950];
+% imshow(Hs2, 'DisplayRange',[0 1], 'colormap', colmap4);  % Depth
+% 
 %% 
 x_map = info.CornerCoords.X(1):2:info.CornerCoords.X(2);
 y_map = info.CornerCoords.Y(1):-2:info.CornerCoords.Y(4);
@@ -74,9 +74,11 @@ y_map = info.CornerCoords.Y(1):-2:info.CornerCoords.Y(4);
 x_rho = zeros(M,L); y_rho = zeros(M,L);
 x_u = zeros(M,L-1); y_u = zeros(M,L-1);
 x_v = zeros(M-1,L); y_v = zeros(M-1,L);
+x_psi = zeros(M-1,L-1); y_psi = zeros(M-1,L-1);
 lon_rho = zeros(M,L); lat_rho = zeros(M,L);
 lon_u = zeros(M,L-1); lat_u = zeros(M,L-1);
 lon_v = zeros(M-1,L); lat_v = zeros(M-1,L);
+lon_psi = zeros(M-1,L-1); lat_psi = zeros(M-1,L-1);
 
 jc = id_yc-12; ic = id_xc+12;
 
@@ -99,6 +101,13 @@ for j=1:M-1
         x_v(j,i) = x_rho(j,i);
         y_v(j,i) = (y_rho(j,i)+y_rho(j,i))/2;
         [lat_v(j,i), lon_v(j,i)] = utm2deg(x_v(j,i), y_v(j,i), '51 N');
+    end
+end
+for j=1:M-1
+    for i=1:L-1
+        x_psi(j,i) = x_u(j,i);
+        y_psi(j,i) = y_v(j,i);
+        [lat_psi(j,i), lon_psi(j,i)] = utm2deg(x_psi(j,i), y_psi(j,i), '51 N');
     end
 end
 
