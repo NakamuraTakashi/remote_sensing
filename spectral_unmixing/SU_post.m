@@ -63,9 +63,9 @@ fig_width = 500; fig_height = 950;
 %     RGB(:,:,2)=Ref_area(:,:,2)*3;  % G
 %     RGB(:,:,1)=Ref_area(:,:,3)*3;  % R
 % end
-RGB(:,:,3)=Ref_area(:,:,1)*2;  % B
-RGB(:,:,2)=Ref_area(:,:,2)*2;  % G
-RGB(:,:,1)=Ref_area(:,:,3)*2;  % R
+RGB(:,:,3)=Ref_area(:,:,1)*4;  % B
+RGB(:,:,2)=Ref_area(:,:,2)*4;  % G
+RGB(:,:,1)=Ref_area(:,:,3)*4;  % R
     
 fig=figure;
 fig.OuterPosition = [0 0 fig_width fig_height];

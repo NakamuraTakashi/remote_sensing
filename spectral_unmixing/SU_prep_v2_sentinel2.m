@@ -14,12 +14,12 @@ SAT_TYPE = 1;
 
 if SAT_TYPE == 1 % Sentinel-2
 %   Yaeyama area
-    dir_name = '../../Ishigaki_Data/GIS_data/sentinel2/S2B_MSIL2A_20210216T021749_Yaeyama_merged_share/';
-    filename = { append(dir_name,'Yaeyama_20210216T021749_B02_20m_sunglint_corr.tif') % ššš Band2 Blue     (490 nm) ššš
-                 append(dir_name,'Yaeyama_20210216T021749_B03_20m_sunglint_corr.tif') % ššš Band3 Green    (560 nm) ššš
-                 append(dir_name,'Yaeyama_20210216T021749_B04_20m_sunglint_corr.tif') % ššš Band4 Red      (665 nm) ššš
-                 append(dir_name,'Yaeyama_20210216T021749_B05_20m_sunglint_corr.tif') % ššš Band5 Red Edge (705 nm) ššš
-                 append(dir_name,'Yaeyama_20210216T021749_B8A_20m.tif')}; % ššš Band8A NIR (865 nm) ššš
+    dir_name = '../../GIS/SU_test/';
+    filename = { append(dir_name,'B02_trim_sgcorr.tif') % ššš Band2 Blue     (490 nm) ššš
+                 append(dir_name,'B03_trim_sgcorr.tif') % ššš Band3 Green    (560 nm) ššš
+                 append(dir_name,'B04_trim_sgcorr.tif') % ššš Band4 Red      (665 nm) ššš
+                 append(dir_name,'B05_trim_sgcorr.tif') % ššš Band5 Red Edge (705 nm) ššš
+                 append(dir_name,'B8A_trim.tif')}; % ššš Band8A NIR (865 nm) ššš
 end
 CRScode = 32651; % Code of UTM coordinate (check property in QGIS)
 
@@ -70,7 +70,8 @@ end
 
 %% 
 % ****** Convert from DN to Planetary Reflectance *************************
-Ref = DN/2^12;
+% Ref = DN/2^12;
+Ref = DN/10000;
 
 %% 
 
@@ -80,7 +81,7 @@ Ref = DN/2^12;
 % Ainf= sw_data(2,1:N_VIS_BANDS);
 
 % yrange_off = 4450:4750;  xrange_off = 1220:1260; % ššš Offshore deeper area ššš
-yrange_off = 200:800;  xrange_off = 1000:2000; % ššš Offshore deeper area ššš
+yrange_off = 1900:2000;  xrange_off = 3300:3700; % ššš Offshore deeper area ššš
 Roff_data  = Ref(yrange_off, xrange_off, :);  
 for i=1:1:N_VIS_BANDS
     Ainf(i) = median(reshape(Roff_data(:,:,i),1,[]));
@@ -113,9 +114,9 @@ end
 %% 
 % ****** Plot RGB color map *********************
 if     SAT_TYPE == 1   % Sentinel-2B
-    RGB(:,:,3)=Ref(:,:,1)*2;  % B
-    RGB(:,:,2)=Ref(:,:,2)*2;  % G
-    RGB(:,:,1)=Ref(:,:,3)*2;  % R
+    RGB(:,:,3)=Ref(:,:,1)*4;  % B
+    RGB(:,:,2)=Ref(:,:,2)*4;  % G
+    RGB(:,:,1)=Ref(:,:,3)*4;  % R
 end
 figure;
 imshow(RGB);  % RGB true color image
@@ -128,7 +129,7 @@ clear RGB
 if     SAT_TYPE == 1 % Sentinel-2B
     mask = ones(size(Ref(:,:,5)));
     mask(Ref(:,:,5)>0.16)=nan;  % Land masking; higher NIR reflectance areas ***** ADJUSTMENT NEEDED!!
-    mask(Ref(:,:,2)<0.06)=nan;  % Offshore masking; row Green reflectance areas ***** ADJUSTMENT NEEDED!!
+    mask(Ref(:,:,2)<0.03)=nan;  % Offshore masking; row Green reflectance areas ***** ADJUSTMENT NEEDED!!
 
     % Error handling
     for i=1:1:N_TOT_BANDS
@@ -145,9 +146,9 @@ end
 %% 
 % ****** Plot masked RGB color map *******
 if     SAT_TYPE == 1  % Sentinel-2B
-    RGB(:,:,3)=Ref_m(:,:,1)*2;  % B
-    RGB(:,:,2)=Ref_m(:,:,2)*2;  % G
-    RGB(:,:,1)=Ref_m(:,:,3)*2;  % R
+    RGB(:,:,3)=Ref_m(:,:,1)*4;  % B
+    RGB(:,:,2)=Ref_m(:,:,2)*4;  % G
+    RGB(:,:,1)=Ref_m(:,:,3)*4;  % R
 end
 figure;
 imshow(RGB);  % RGB true color image
@@ -178,7 +179,7 @@ clear RGB
 clear Ref_area  mask_area;
 
 % yrange_area = 1:size(Ref,1);  xrange_area = 1:size(Ref,2); % all area šššššššššššššššššš
-yrange_area = 1000:1600;  xrange_area = 3030:3200;  % šššššššššššššššššš
+yrange_area = 1300:1900;  xrange_area = 3150:3300;  % šššššššššššššššššš
 
 Ref_area = cast(Ref_m(yrange_area, xrange_area,:), 'double');
 mask_area= cast(mask    (yrange_area, xrange_area,:), 'double');
@@ -189,9 +190,9 @@ Y2=Y(yrange_area);
 %% 
 % ****** Plot trimmed RGB color map *******
 if     SAT_TYPE == 1   % Sentinel-2B
-    RGB(:,:,3)=Ref_area(:,:,1)*2;  % B
-    RGB(:,:,2)=Ref_area(:,:,2)*2;  % G
-    RGB(:,:,1)=Ref_area(:,:,3)*2;  % R
+    RGB(:,:,3)=Ref_area(:,:,1)*4;  % B
+    RGB(:,:,2)=Ref_area(:,:,2)*4;  % G
+    RGB(:,:,1)=Ref_area(:,:,3)*4;  % R
 end
 figure;
 imshow(RGB);  % RGB true color image
