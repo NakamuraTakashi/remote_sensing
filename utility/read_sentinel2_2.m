@@ -141,8 +141,8 @@ axis on
 colorbar
 %% Relative depth
 R2 = R;
-R2.XWorldLimits=[min(X2) max(X2)];
-R2.YWorldLimits=[min(Y2) max(Y2)];
+R2.XWorldLimits=[min(X2) max(X2)+R.CellExtentInWorldY];
+R2.YWorldLimits=[min(Y2)-R.CellExtentInWorldY max(Y2)];
 R2.RasterSize = size(Ref_sgc,[1 2]);
 
 geotifname='Rel_depth.tif';
