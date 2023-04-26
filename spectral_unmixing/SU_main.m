@@ -8,7 +8,7 @@ function SU_main(I_AREA, NUM_AREA)
 % ****** Spectral unmixing technique ************************************** 
 tic
 % ***** Load data *********************************************************
-load('output/SU_prep8.mat');
+load('output/SU_prep9.mat');
 
 mask_area=mask_area;
 N_PAIRS=N_PAIRS;
@@ -16,7 +16,7 @@ N_VIS_BANDS=N_VIS_BANDS;
 Ref_area=Ref_area;
 Ainf=Ainf;
 u=u;
-cosZw=cosZw;
+% cosZw=cosZw;
 % Asg=Asg;
 Kz=Kz;
 Asg_matrix=Asg_matrix;

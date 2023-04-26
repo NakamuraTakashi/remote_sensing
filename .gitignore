@@ -1,6 +1,9 @@
 # Output Files
 spectral_unmixing/output*
 *.png
+*.tif
+*.JPG
+*.MOV
 
 # Backup Files
 backup/*
@@ -15,4 +18,7 @@ spectral_unmixing/Data/r02_matlab_coral_species/*
 *.asv
 *.mat
 
+# Test files
+qgis/*
+spectral_unmixing/Data/raw_data/*
 

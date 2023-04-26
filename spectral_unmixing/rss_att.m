@@ -5,8 +5,8 @@ B = x(3); %0.3; % Gordon & Morel, 1983
 
 [Kz, Ainf2, u] = ws_att(Chla, ag440, B);
 
-F = sum((Ainf-Ainf2).*(Ainf-Ainf2));
-% F = sum(abs(Ainf-Ainf2)./Ainf);
+% F = sum((Ainf-Ainf2).*(Ainf-Ainf2));
+F = sum(abs(Ainf-Ainf2)./Ainf);
 
 end
 

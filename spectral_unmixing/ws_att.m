@@ -7,7 +7,7 @@ g0 = 0.07;
 g1 = 0.155;
 g2 = 0.752;
 
-res_filename = 'Data/spec_sig/radiance_response_WV2.csv';   % Radiance response file for satellite sensor
+res_filename = 'Data/spec_sig/radiance_response_sentinel2B.csv';   % Radiance response file for satellite sensor
 aw_filename = 'Data/spec_sig/aw_Smith_Baker_1981.txt';
 ap_filename = 'Data/spec_sig/aphy_Lee_et_al_1998.txt';
 
@@ -40,7 +40,7 @@ alpha = at + bt;
 
 ut = bt./(at+bt);
 
-for i=1:6;
+for i=1:4;
     res = interp1(Res(:,1),Res(:,i+2),wl,'pchip');
     Kz(i) = sum(res.*alpha)/sum(res);
     u(i) = sum(res.*ut)/sum(res);
